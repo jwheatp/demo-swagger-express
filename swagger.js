@@ -48,6 +48,11 @@ export default {
             "required": true,
             "type": "integer",
             "example": 42468
+          },
+        ],
+        "security": [
+          {
+            "jwt": []
           }
         ],
         "responses": {
@@ -62,6 +67,14 @@ export default {
           }
         }
       }
+    }
+  },
+  "securityDefinitions": {
+    "jwt": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Enter the token with the `Bearer: ` prefix, e.g. 'Bearer abcde12345'."
     }
   }
 }
